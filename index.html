@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -17,9 +20,12 @@
             --bg-card: rgba(20, 20, 20, 0.7);
             --text: #ffffff;
             --text-muted: #888888;
-            --accent-1: #ccff00; /* Neon Lime */
-            --accent-2: #ff0055; /* Hot Pink */
-            --accent-3: #00f0ff; /* Cyan */
+            --accent-1: #ccff00;
+            /* Neon Lime */
+            --accent-2: #ff0055;
+            /* Hot Pink */
+            --accent-3: #00f0ff;
+            /* Cyan */
             --border: rgba(255, 255, 255, 0.1);
         }
 
@@ -27,7 +33,8 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            cursor: none; /* Hide default cursor for custom cursor */
+            cursor: none;
+            /* Hide default cursor for custom cursor */
         }
 
         html.lenis {
@@ -55,8 +62,10 @@
         /* --- Custom Cursor --- */
         #cursor {
             position: fixed;
-            top: 0; left: 0;
-            width: 12px; height: 12px;
+            top: 0;
+            left: 0;
+            width: 12px;
+            height: 12px;
             background: transparent;
             border: 2px solid var(--accent-1);
             border-radius: 50%;
@@ -65,28 +74,34 @@
             z-index: 9999;
             transition: width 0.3s, height 0.3s, border-color 0.3s, background-color 0.3s;
         }
+
         #cursor::after {
             content: '';
             position: absolute;
-            top: 50%; left: 50%;
-            width: 4px; height: 4px;
+            top: 50%;
+            left: 50%;
+            width: 4px;
+            height: 4px;
             background: var(--accent-1);
             border-radius: 50%;
             transform: translate(-50%, -50%);
             transition: background-color 0.3s;
         }
+
         #cursor-glow {
             position: fixed;
-            top: 0; left: 0;
-            width: 80px; height: 80px;
-            background: radial-gradient(circle, rgba(204,255,0,0.2) 0%, rgba(0,0,0,0) 70%);
+            top: 0;
+            left: 0;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, rgba(204, 255, 0, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
             border-radius: 50%;
             pointer-events: none;
             transform: translate(-50%, -50%);
             z-index: 9998;
             transition: transform 0.1s;
         }
-        
+
         .hover-active {
             width: 50px !important;
             height: 50px !important;
@@ -94,6 +109,7 @@
             background: rgba(0, 240, 255, 0.1) !important;
             backdrop-filter: blur(2px);
         }
+
         .hover-active::after {
             background: var(--accent-3) !important;
         }
@@ -101,14 +117,20 @@
         /* --- Canvas Background --- */
         #bg-canvas {
             position: fixed;
-            top: 0; left: 0;
-            width: 100vw; height: 100vh;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
             z-index: -1;
             pointer-events: none;
         }
 
         /* --- Typography --- */
-        h1, h2, h3, h4, .syne {
+        h1,
+        h2,
+        h3,
+        h4,
+        .syne {
             font-family: 'Syne', sans-serif;
         }
 
@@ -121,10 +143,12 @@
         /* --- Navigation --- */
         nav {
             position: fixed;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             z-index: 100;
             padding: 1.5rem 0;
-            background: linear-gradient(to bottom, rgba(3,3,3,0.9), transparent);
+            background: linear-gradient(to bottom, rgba(3, 3, 3, 0.9), transparent);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
         }
@@ -143,7 +167,7 @@
             letter-spacing: 2px;
             position: relative;
         }
-        
+
         .logo span {
             color: var(--accent-1);
             display: inline-block;
@@ -170,8 +194,10 @@
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -2px; left: 0;
-            width: 100%; height: 2px;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
             background: var(--accent-1);
             transform: scaleX(0);
             transform-origin: right;
@@ -233,7 +259,8 @@
         }
 
         .hero-tag .dot {
-            width: 8px; height: 8px;
+            width: 8px;
+            height: 8px;
             background: var(--accent-1);
             border-radius: 50%;
             box-shadow: 0 0 10px var(--accent-1);
@@ -241,8 +268,17 @@
         }
 
         @keyframes blink {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.4; transform: scale(0.8); }
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.4;
+                transform: scale(0.8);
+            }
         }
 
         .hero h1 {
@@ -262,7 +298,7 @@
             color: transparent;
             display: inline-block;
         }
-        
+
         .gradient-text-2 {
             background: linear-gradient(45deg, var(--accent-2), #ff8800);
             -webkit-background-clip: text;
@@ -312,8 +348,10 @@
         .btn-primary::before {
             content: '';
             position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: #fff;
             z-index: -1;
             transform: scaleX(0);
@@ -416,9 +454,11 @@
         .service-card::before {
             content: '';
             position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: radial-gradient(circle at top right, rgba(204,255,0,0.1), transparent 70%);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top right, rgba(204, 255, 0, 0.1), transparent 70%);
             opacity: 0;
             transition: opacity 0.5s ease;
         }
@@ -426,7 +466,7 @@
         .service-card:hover {
             transform: translateY(-10px) scale(1.02);
             border-color: var(--accent-1);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 30px rgba(204,255,0,0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(204, 255, 0, 0.1);
         }
 
         .service-card:hover::before {
@@ -490,12 +530,12 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         .work-image::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(45deg, rgba(204,255,0,0.2), rgba(0,240,255,0.2));
+            background: linear-gradient(45deg, rgba(204, 255, 0, 0.2), rgba(0, 240, 255, 0.2));
             mix-blend-mode: overlay;
             opacity: 0;
             transition: opacity 0.5s ease;
@@ -510,7 +550,7 @@
             color: var(--border);
             transition: all 0.5s ease;
         }
-        
+
         .work-item:hover .work-image i {
             color: var(--accent-3);
             transform: scale(1.2);
@@ -560,8 +600,10 @@
         .work-link::after {
             content: '';
             position: absolute;
-            bottom: -5px; left: 0;
-            width: 100%; height: 2px;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
             background: var(--accent-1);
             transform: scaleX(0);
             transform-origin: right;
@@ -572,11 +614,11 @@
             transform: scaleX(1);
             transform-origin: left;
         }
-        
+
         .work-link i {
             transition: transform 0.3s ease;
         }
-        
+
         .work-link:hover i {
             transform: translateX(5px) rotate(-45deg);
         }
@@ -621,10 +663,18 @@
             margin-bottom: 0.5rem;
             line-height: 1;
         }
-        
-        .stat-box:nth-child(2) h4 { color: var(--accent-2); }
-        .stat-box:nth-child(3) h4 { color: var(--accent-3); }
-        .stat-box:nth-child(4) h4 { color: #fff; }
+
+        .stat-box:nth-child(2) h4 {
+            color: var(--accent-2);
+        }
+
+        .stat-box:nth-child(3) h4 {
+            color: var(--accent-3);
+        }
+
+        .stat-box:nth-child(4) h4 {
+            color: #fff;
+        }
 
         .stat-box span {
             font-size: 0.9rem;
@@ -641,13 +691,15 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .contact-section::before {
             content: '';
             position: absolute;
-            top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: radial-gradient(circle at center, rgba(255,0,85,0.05) 0%, transparent 50%);
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(255, 0, 85, 0.05) 0%, transparent 50%);
             pointer-events: none;
         }
 
@@ -713,10 +765,10 @@
             transition: all 0.3s ease;
         }
 
-        .contact-form input:focus ~ label,
-        .contact-form input:valid ~ label,
-        .contact-form textarea:focus ~ label,
-        .contact-form textarea:valid ~ label {
+        .contact-form input:focus~label,
+        .contact-form input:valid~label,
+        .contact-form textarea:focus~label,
+        .contact-form textarea:valid~label {
             top: -0.5rem;
             font-size: 0.8rem;
             color: var(--accent-1);
@@ -736,12 +788,85 @@
             margin-top: 1rem;
             transition: all 0.3s ease;
             font-family: 'Syne', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
         }
 
         .submit-btn:hover {
             background: var(--accent-1);
             box-shadow: 0 0 30px rgba(204, 255, 0, 0.3);
             transform: translateY(-5px);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .submit-btn .btn-spinner {
+            display: none;
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(0, 0, 0, 0.3);
+            border-top-color: #000;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+        }
+
+        .submit-btn.loading .btn-spinner {
+            display: block;
+        }
+
+        .submit-btn.loading .btn-text {
+            display: none;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* --- Toast Notification --- */
+        #toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            padding: 1.2rem 2rem;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 1rem;
+            z-index: 9999;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid;
+            pointer-events: none;
+        }
+
+        #toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        #toast.success {
+            background: rgba(204, 255, 0, 0.15);
+            border-color: var(--accent-1);
+            color: var(--accent-1);
+        }
+
+        #toast.error {
+            background: rgba(255, 0, 85, 0.15);
+            border-color: var(--accent-2);
+            color: var(--accent-2);
         }
 
         /* --- Footer --- */
@@ -775,27 +900,35 @@
 
         /* --- Media Queries --- */
         @media (max-width: 992px) {
-            .work-item, .about-content, .contact-grid {
+
+            .work-item,
+            .about-content,
+            .contact-grid {
                 grid-template-columns: 1fr;
             }
+
             .nav-links {
                 display: none;
             }
         }
-        
+
         @media (max-width: 768px) {
             .hero {
                 text-align: center;
             }
+
             .hero-btns {
                 justify-content: center;
             }
+
             .stats-grid {
                 grid-template-columns: 1fr;
             }
+
             .marquee-inner {
                 font-size: 2.5rem;
             }
+
             .footer-inner {
                 flex-direction: column;
                 gap: 2rem;
@@ -804,11 +937,15 @@
         }
     </style>
 </head>
+
 <body>
 
     <!-- Custom Cursor -->
     <div id="cursor"></div>
     <div id="cursor-glow"></div>
+
+    <!-- Toast Notification -->
+    <div id="toast"></div>
 
     <!-- Background Canvas -->
     <canvas id="bg-canvas"></canvas>
@@ -820,8 +957,9 @@
             <ul class="nav-links">
                 <li><a href="#services" class="hover-target">Services</a></li>
                 <li><a href="#about" class="hover-target">About</a></li>
+                <li><a href="#contact" class="hover-target">Contact</a></li>
             </ul>
-            <a href="mailto:your.rohan108@gmail.com" class="nav-cta hover-target" target="_blank" rel="noopener noreferrer">Contact Me</a>
+            <a href="#contact" class="nav-cta hover-target">Contact Me</a>
         </div>
     </nav>
 
@@ -832,10 +970,13 @@
                 <div class="hero-tag hover-target">
                     <span class="dot"></span> Available for freelance
                 </div>
-                <h1 class="gsap-reveal">Building <br><span class="gradient-text">High-End</span> <br>Digital Products.</h1>
-                <p class="gsap-reveal-delay">I am Rohan, a full-stack developer & UI/UX designer crafting maximalist, scalable, and seriously impressive digital experiences.</p>
+                <h1 class="gsap-reveal">Building <br><span class="gradient-text">High-End</span> <br>Digital Products.
+                </h1>
+                <p class="gsap-reveal-delay">I am Rohan, a full-stack developer & UI/UX designer crafting maximalist,
+                    scalable, and seriously impressive digital experiences.</p>
                 <div class="hero-btns gsap-reveal-delay-2">
-                    <a href="mailto:your.rohan108@gmail.com" class="btn btn-primary hover-target" target="_blank" rel="noopener noreferrer">Let's Talk</a>
+                    <a href="mailto:your.rohan108@gmail.com" class="btn btn-primary hover-target" target="_blank"
+                        rel="noopener noreferrer">Let's Talk</a>
                     <a href="#services" class="btn btn-secondary hover-target">My Expertise</a>
                 </div>
             </div>
@@ -845,8 +986,8 @@
     <!-- Marquee -->
     <div class="marquee">
         <div class="marquee-inner">
-            FRONTEND • BACKEND • UI/UX DESIGN • FULLSTACK • ANIMATION • WEBGL • PERFORMANCE • 
-            FRONTEND • BACKEND • UI/UX DESIGN • FULLSTACK • ANIMATION • WEBGL • PERFORMANCE • 
+            FRONTEND • BACKEND • UI/UX DESIGN • FULLSTACK • ANIMATION • WEBGL • PERFORMANCE •
+            FRONTEND • BACKEND • UI/UX DESIGN • FULLSTACK • ANIMATION • WEBGL • PERFORMANCE •
         </div>
     </div>
 
@@ -929,15 +1070,19 @@
                 <h2>The Engineer</h2>
                 <div class="section-line"></div>
             </div>
-            
+
             <div class="about-content">
                 <div class="about-text">
-                    <h3 class="syne gradient-text" style="font-size: 2.5rem; margin-bottom: 1.5rem;">Code meets Art.</h3>
-                    <p>I'm <strong>Rohan</strong>. I don't just write code; I architect digital experiences. My philosophy is maximalist — why be plain when you can be unforgettable?</p>
-                    <p>My arsenal includes <strong>React, Node, Python, Java, C++, and GSAP</strong>. I handle everything from the granular database queries to the fluid 60fps animations on the frontend.</p>
-                    <p>Currently accepting select freelance projects. If you want to build something that stands out in a sea of generic templates, we should talk.</p>
+                    <h3 class="syne gradient-text" style="font-size: 2.5rem; margin-bottom: 1.5rem;">Code meets Art.
+                    </h3>
+                    <p>I'm <strong>Rohan</strong>. I don't just write code; I architect digital experiences. My
+                        philosophy is maximalist — why be plain when you can be unforgettable?</p>
+                    <p>My arsenal includes <strong>React, Node, Python, Java, C++, and GSAP</strong>. I handle
+                        everything from the granular database queries to the fluid 60fps animations on the frontend.</p>
+                    <p>Currently accepting select freelance projects. If you want to build something that stands out in
+                        a sea of generic templates, we should talk.</p>
                 </div>
-                
+
                 <div class="stats-grid">
                     <div class="stat-box">
                         <h4>5+</h4>
@@ -967,27 +1112,38 @@
                 <div class="contact-info">
                     <h2>Let's build <br><span class="gradient-text-2">Something <br>Epic.</span></h2>
                     <p>Got an idea that needs a premium touch? Drop me a line. I usually respond within a few hours.</p>
-                    
+
                     <div style="margin-top: 3rem;">
-                        <h4 class="syne" style="color: var(--text-muted); margin-bottom: 1rem; text-transform: uppercase;">Direct Contact</h4>
-                        <a href="mailto:your.rohan108@gmail.com" class="hover-target" style="color: var(--text); font-size: 1.5rem; text-decoration: none; font-weight: 700;">your.rohan108@gmail.com</a>
+                        <h4 class="syne"
+                            style="color: var(--text-muted); margin-bottom: 1rem; text-transform: uppercase;">Direct
+                            Contact</h4>
+                        <a href="mailto:your.rohan108@gmail.com" class="hover-target"
+                            style="color: var(--text); font-size: 1.5rem; text-decoration: none; font-weight: 700;">your.rohan108@gmail.com</a>
                     </div>
                 </div>
-                
+
                 <form id="contactForm" class="contact-form">
+                    <!-- Web3Forms hidden fields -->
+                    <input type="hidden" name="access_key" value=bbb7c1c5-8017-4766-866c-fe60e839cab4>
+                    <input type="hidden" name="subject" value="New Project Inquiry from Portfolio">
+                    <input type="hidden" name="from_name" value="Rohan Portfolio">
+                    <input type="checkbox" name="botcheck" style="display:none">
                     <div class="form-group">
-                        <input type="text" id="name" required>
+                        <input type="text" id="name" name="name" required>
                         <label for="name">Your Name</label>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" required>
+                        <input type="email" id="email" name="email" required>
                         <label for="email">Your Email</label>
                     </div>
                     <div class="form-group">
-                        <textarea id="message" rows="4" required></textarea>
+                        <textarea id="message" name="message" rows="4" required></textarea>
                         <label for="message">Tell me about the project</label>
                     </div>
-                    <button type="submit" class="submit-btn hover-target">Send Transmission</button>
+                    <button type="submit" class="submit-btn hover-target" id="submitBtn">
+                        <span class="btn-text">Send Transmission ✦</span>
+                        <span class="btn-spinner"></span>
+                    </button>
                 </form>
             </div>
         </div>
@@ -999,9 +1155,12 @@
             <div class="logo" style="font-size: 1.2rem;">Rohan<span>.</span></div>
             <p style="color: var(--text-muted);">&copy; 2026 Rohan. Crafted with maximalist intent.</p>
             <div class="social-links">
-                <a href="#" class="hover-target"><i class="fab fa-github"></i></a>
-                <a href="#" class="hover-target"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" class="hover-target"><i class="fab fa-twitter"></i></a>
+                <a href="https://github.com/your-rohan" class="hover-target" target="_blank" rel="noopener noreferrer"
+                    title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/rohan-chetty" class="hover-target" target="_blank"
+                    rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://twitter.com/rohan_chetty" class="hover-target" target="_blank"
+                    rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
             </div>
         </div>
     </footer>
@@ -1061,8 +1220,8 @@
             height = canvas.height = window.innerHeight;
             particles = [];
             const particleCount = window.innerWidth < 768 ? 40 : 100;
-            
-            for(let i = 0; i < particleCount; i++) {
+
+            for (let i = 0; i < particleCount; i++) {
                 particles.push({
                     x: Math.random() * width,
                     y: Math.random() * height,
@@ -1082,12 +1241,12 @@
                 ctx.fillStyle = p.color;
                 ctx.globalAlpha = 0.5;
                 ctx.fill();
-                
+
                 p.x += p.dx;
                 p.y += p.dy;
-                
-                if(p.x < 0 || p.x > width) p.dx = -p.dx;
-                if(p.y < 0 || p.y > height) p.dy = -p.dy;
+
+                if (p.x < 0 || p.x > width) p.dx = -p.dx;
+                if (p.y < 0 || p.y > height) p.dy = -p.dy;
             });
             requestAnimationFrame(drawParticles);
         }
@@ -1107,7 +1266,7 @@
             ease: "power4.out",
             stagger: 0.2
         });
-        
+
         gsap.from(".gsap-reveal-delay", {
             y: 50,
             opacity: 0,
@@ -1148,7 +1307,7 @@
 
         // Services Reveal
         gsap.utils.toArray(".service-card").forEach(card => {
-            gsap.fromTo(card, 
+            gsap.fromTo(card,
                 { opacity: 0, y: 50 },
                 {
                     scrollTrigger: {
@@ -1177,18 +1336,53 @@
             stagger: 0.2,
             ease: "back.out(1.7)"
         });
-        // Form Submission Intercept
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        // --- Toast Helper ---
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            toast.className = `show ${type}`;
+            toast.innerHTML = type === 'success'
+                ? `<i class="fas fa-check-circle"></i> ${message}`
+                : `<i class="fas fa-times-circle"></i> ${message}`;
+            setTimeout(() => { toast.className = ''; }, 4500);
+        }
+
+        // --- Contact Form via Web3Forms (AJAX) ---
+        document.getElementById('contactForm').addEventListener('submit', async function (e) {
             e.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            
-            const subject = encodeURIComponent(`New Project Inquiry from ${name}`);
-            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-            
-            window.location.href = `mailto:your.rohan108@gmail.com?subject=${subject}&body=${body}`;
+            const btn = document.getElementById('submitBtn');
+            btn.classList.add('loading');
+            btn.disabled = true;
+
+            const formData = new FormData(this);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    showToast('Message sent! I\'ll get back to you soon. 🚀', 'success');
+                    this.reset();
+                } else {
+                    showToast(result.message || 'Something went wrong. Try again!', 'error');
+                }
+            } catch (err) {
+                showToast('Network error. Please check your connection.', 'error');
+            } finally {
+                btn.classList.remove('loading');
+                btn.disabled = false;
+            }
         });
     </script>
 </body>
+
 </html>
